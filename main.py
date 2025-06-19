@@ -14,5 +14,7 @@ class Blockchain:
 
   def call_contract(self, address: str, function: str,args: dict):
       print(f"Blockchain: Calling {function} on address} with {args}")
-    return True
+      return True
   
+
+  #payment channels
