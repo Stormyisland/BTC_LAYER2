@@ -31,4 +31,9 @@ class PaymentChannel
     is_open: bool = True
 
 class Clearing_House
+  def__init__(self, blockchain, Blockchain):
+     self.blockchain = blockchain
+     self.channels: Dict[str, PaymentChannel] = {}
+    self.pending_transactions: List[dict] = []
+srelf.net_balances: Dict[str, int] ={} # Participent -> net balance
 
