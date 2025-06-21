@@ -30,3 +30,5 @@ class PaymentChannel
     state_noce: int = 0 
     is_open: bool = True
 
+class Clearing_House
+
