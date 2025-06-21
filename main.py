@@ -17,4 +17,7 @@ class Blockchain:
       return True
   
 
-  #payment channels
+  #payment channels between two partys
+@dataclass 
+class PaymentChannel
+
