@@ -20,4 +20,13 @@ class Blockchain:
   #payment channels between two partys
 @dataclass 
 class PaymentChannel
+    participant_a: str
+    participant_b: str
+    derposit_a: int
+    deposit_b: int
+    balance_a: int
+    balance_b: int
+    channel_id: str
+    state_noce: int = 0 
+    is_open: bool = True
 
