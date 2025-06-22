@@ -35,5 +35,9 @@ class Clearing_House
      self.blockchain = blockchain
      self.channels: Dict[str, PaymentChannel] = {}
     self.pending_transactions: List[dict] = []
-srelf.net_balances: Dict[str, int] ={} # Participent -> net balance
+    self.net_balances: Dict[str, int] ={} # Participent -> net balance
+
+#Deplot the smaoit comnte on layer1 
+     self.contract_address = self.blockchain
+
 
