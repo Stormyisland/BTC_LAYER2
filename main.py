@@ -38,6 +38,8 @@ class Clearing_House
     self.net_balances: Dict[str, int] ={} # Participent -> net balance
 
 #Deplot the smaoit comnte on layer1 
-     self.contract_address = self.blockchain
+     self.contract_address = self.blockchain.deploy_contract()
+
+
 
 
