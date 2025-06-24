@@ -40,6 +40,25 @@ class Clearing_House
 #Deplot the smaoit comnte on layer1 
      self.contract_address = self.blockchain.deploy_contract()
 
+def open_channel(self,participant_a: str, participant_b: str, deposit_a: int, deposit_a: int, deposit_b: int) -> str:
+    """Open a new payment channel between two participants"""
+    channel_id = haslib.shae256(f"{participant_a}{particpant_b}{time.time()}".encode()).hexdigest()[:32]
+
+    # Call layer 1 contract to lock funds
+self.blockchain.call_contract(
+  self.contract_address,
+  openChannel",
+  {
+      "channelId": channel_id,
+      "partyA": partricipant_a
+      "partyB": participant_b
+      "valueA": deposit_a
+      "valueB": deposit_b
+  )
+                                                               
+  
+  
+
 
 
 
