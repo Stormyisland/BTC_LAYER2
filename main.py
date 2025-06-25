@@ -27,7 +27,7 @@ class PaymentChannel
     balance_a: int
     balance_b: int
     channel_id: str
-    state_noce: int = 0 
+    state_nonce: int = 0 
     is_open: bool = True
 
 class Clearing_House
@@ -55,8 +55,8 @@ self.blockchain.call_contract(
       "valueA": deposit_a
       "valueB": deposit_b
   )
-                                                               
-  
+
+
   
 
 
