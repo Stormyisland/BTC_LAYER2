@@ -34,41 +34,50 @@ class Clearing_House
   def__init__(self, blockchain, Blockchain):
      self.blockchain = blockchain
      self.channels: Dict[str, PaymentChannel] = {}
-    self.pending_transactions: List[dict] = []
-    self.net_balances: Dict[str, int] ={} # Participent -> net balance
+     self.pending_transactions: List[dict] = []
+     self.net_balances: Dict[str, int] ={} # Participent -> net balance
 
-#Deplot the smaoit comnte on layer1 
+     #Deploy the smart contract on layer1 
      self.contract_address = self.blockchain.deploy_contract()
 
-def open_channel(self,participant_a: str, participant_b: str, deposit_a: int, deposit_a: int, deposit_b: int) -> str:
+  def open_channel(self,participant_a: str, participant_b: str, deposit_a: int, deposit_a: int, deposit_b: int) -> str:
     """Open a new payment channel between two participants"""
     channel_id = haslib.shae256(f"{participant_a}{particpant_b}{time.time()}".encode()).hexdigest()[:32]
 
     # Call layer 1 contract to lock funds
-self.blockchain.call_contract(
-  self.contract_address,
-  openChannel",
-  {
-      "channelId": channel_id,
-      "partyA": partricipant_a
-      "partyB": participant_b
-      "valueA": deposit_a
-      "valueB": deposit_b
+  self.blockchain.call_contract(
+      self.contract_address,
+      "openChannel",
+     {
+          "channelId": channel_id,
+          "partyA": partricipant_a,
+          "partyB": participant_b,
+          "valueA": deposit_a,
+          "valueB": deposit_b,
   )
 
   # Create the channel in layer 2
-channel = PaymentChannel(
-    particicpant_a=participant_a'
-    participant_b=participant_b,
-    deposit_a=deposit_a,
-    deposit_b=deposit_b,
-    balance_a=balance_a,
-    balance_b=balance_b,
-    deposit_a=deposit_a,
-    deposit_b=deposit_b,
-    cahnnel_id=channel_id
-  )
-    self
+  channel = PaymentChannel(
+      particicpant_a=participant_a'
+      participant_b=participant_b,
+      deposit_a=deposit_a,
+      deposit_b=deposit_b,
+      balance_a=balance_a,
+      balance_b=balance_b,
+      deposit_a=deposit_a,
+      deposit_b=deposit_b,
+      channel_id=channel_id
+    )
+    self.channels[channel_id = channel
+    return channel_id
+
+def add_transaction(self, channel_id: str, from_participant: str, rto+participant: str, amomut: int):
+    """add a transaction to the clearing house """
+    if channel_id not in self.channels:
+    raise ValueError("channel does not exist")
+
+    
+    
   
 
 
