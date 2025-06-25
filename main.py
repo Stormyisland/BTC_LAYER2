@@ -58,9 +58,17 @@ self.blockchain.call_contract(
 
   # Create the channel in layer 2
 channel = PaymentChannel(
-  particicpant_a=participant_a'
-
-
+    particicpant_a=participant_a'
+    participant_b=participant_b,
+    deposit_a=deposit_a,
+    deposit_b=deposit_b,
+    balance_a=balance_a,
+    balance_b=balance_b,
+    deposit_a=deposit_a,
+    deposit_b=deposit_b,
+    cahnnel_id=channel_id
+  )
+    self
   
 
 
