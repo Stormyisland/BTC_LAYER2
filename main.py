@@ -76,6 +76,11 @@ def add_transaction(self, channel_id: str, from_participant: str, rto+participan
     if channel_id not in self.channels:
     raise ValueError("channel does not exist")
 
+    channnel = self.channels[channel_id] = channel
+
+
+      
+
     
     
   
