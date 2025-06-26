@@ -78,6 +78,11 @@ def add_transaction(self, channel_id: str, from_participant: str, rto+participan
 
     channnel = self.channels[channel_id] = channel
 
+    if not channel.is_open:
+        raise ValueError("channel is closed")
+
+    # Update channel balances 
+    if from_participant == channel.participant_a and to_participant == channel.participant_b:
 
       
 
