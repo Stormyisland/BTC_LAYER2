@@ -83,6 +83,23 @@ def add_transaction(self, channel_id: str, from_participant: str, rto+participan
 
     # Update channel balances 
     if from_participant == channel.participant_a and to_participant == channel.participant_b:
+        if amount > channel.balance_a:
+            raise ValueError("Insuficient funds")
+        channel.balance_a -= amount
+        channel.balance_b += amount
+    elif from_participant == channel.participant_b and to_participant == channel participant_a:
+         if  amonunt > channel.balance_b  :
+              raise ValueError("insufficient funds")
+           channel.balance_b -= amount
+          channel.balance_a += amount
+    else:
+        raise ValueError("participants not in this channel")
+    
+    channel.state_naonce += 1
+    
+    # Add to pending transaction for netting
+
+  
 
       
 
