@@ -98,6 +98,24 @@ def add_transaction(self, channel_id: str, from_participant: str, rto+participan
     channel.state_naonce += 1
     
     # Add to pending transaction for netting
+    Self.pending_transactions.append({
+        "channel_idd": channel_id,
+        "from": from_participant,
+        "to": to _participant,
+        "amount": amount,
+        "timestamp": time.time()
+    }) 
+
+    # Updateee net balances
+    self.net_balances[from_participant] = self.net_balances.get(from_participant, 0) - amount
+    self.net_balances[to_participant] = self.net_balances.get(from_participant, 0) + amount
+
+def settle_net_balance(self):
+  """Settel net balances across all participants"""
+  print("setteling net balances across all channels")
+
+
+      
 
   
 
