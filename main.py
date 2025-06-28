@@ -111,8 +111,12 @@ def add_transaction(self, channel_id: str, from_participant: str, rto+participan
     self.net_balances[to_participant] = self.net_balances.get(from_participant, 0) + amount
 
 def settle_net_balance(self):
-  """Settel net balances across all participants"""
-  print("setteling net balances across all channels")
+    """Settel net balances across all participants"""
+    print("setteling net balances across all channels")
+
+    for participant, balance in self.net_balances.items():
+        print("Participant {participant} has net balance: {balance}") 
+
 
 
       
