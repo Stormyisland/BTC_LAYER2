@@ -117,6 +117,8 @@ def settle_net_balance(self):
     for participant, balance in self.net_balances.items():
         print("Participant {participant} has net balance: {balance}") 
 
+      
+
 
 
       
