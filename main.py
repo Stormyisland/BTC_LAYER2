@@ -110,13 +110,33 @@ def add_transaction(self, channel_id: str, from_participant: str, rto+participan
     self.net_balances[from_participant] = self.net_balances.get(from_participant, 0) - amount
     self.net_balances[to_participant] = self.net_balances.get(from_participant, 0) + amount
 
-def settle_net_balance(self):
-    """Settel net balances across all participants"""
-    print("setteling net balances across all channels")
+  def settle_net_balance(self):
+      """Settel net balances across all participants"""
+      print("setteling net balances across all channels")
+  
+      for participant, balance in self.net_balances.items():
+          print("Participant {participant} has net balance: {balance}") 
+      # Clear pending transaction after settlement
+      self.pending_transaction = []
+      self.net_balances = {}
 
-    for participant, balance in self.net_balances.items():
-        print("Participant {participant} has net balance: {balance}") 
+  def close_channel(self, channel_id: str):
+      """close payment channel and settle final balances  on layer 1"""
+      it channel_id not in self.channels:
+          raise ValueError("channel does not exist")
 
+      channel = self.channel[channel_id]
+      # Call layer 1 contract to close channel and withdraw funds 
+      self.blockchain.call_contract(
+          self.contract adress,
+          "closechannel",
+        {
+          "channelId'": channel_id,
+          "balanceA":channel.balance_a,
+          "balance_B":channel.balance_b,
+          "nonce":channel.state_nonce,
+          "signatureA":"sidA", needsd proper signatures 
+          
       
 
 
