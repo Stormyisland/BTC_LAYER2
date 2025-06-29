@@ -131,13 +131,18 @@ def add_transaction(self, channel_id: str, from_participant: str, rto+participan
           self.contract adress,
           "closechannel",
         {
-          "channelId'": channel_id,
-          "balanceA":channel.balance_a,
-          "balance_B":channel.balance_b,
-          "nonce":channel.state_nonce,
-          "signatureA":"sidA", needsd proper signatures 
-          
-      
+            "channelId'": channel_id,
+            "balanceA":channel.balance_a,
+            "balance_B":channel.balance_b,
+            "nonce":channel.state_nonce,
+            "signatureA":"sigA",   # needs proper signatures 
+            "signatureB":"sigB"
+        }
+      )
+      channel.is_open = False
+      print(f"Channel {channel_id} closed with balences: A = {channel.balance_a}, B={channel.balance_b}")
+
+
 
 
 
